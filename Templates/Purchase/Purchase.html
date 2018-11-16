@@ -1,0 +1,100 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+{% include "Purchase/managerheader.html" %}
+    </head>
+    <br>
+    <br>
+    <br>
+    <body>
+<form method="post">
+    {% csrf_token %}
+                <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+                    <tr>
+                        <td>
+                           Invoice No :
+                        </td>
+
+                         <td>
+                           {{ invs }}
+                         </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                           Item Name :
+                        </td>
+
+                         <td>
+                           {{ form.itemname }}
+                         </td>
+                    </tr>
+                     <tr>
+                         <td>
+                           Quantity :
+                        </td>
+
+                          <td>
+                           {{ form.itemquantity }}
+                         </td>
+                     </tr>
+
+                     <tr>
+                         <td>
+                           Basic Rate :
+                        </td>
+
+                          <td>
+                           {{ form.itembasicrate }}
+                         </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                             <input type="submit" name="summit" value="INSERT">
+                        </td>
+                    </tr>
+
+
+                </table>
+    <br>
+    <br>
+    <br>
+
+    <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" border="1">
+        <tr>
+            <td>Id</td>
+            <td>Invoice no</td>
+            <td>Item Name</td>
+            <td>Quantity</td>
+            <td>Basic Rate</td>
+            <td>Unit Total</td>
+        </tr>
+        {% for obj in data %}
+    <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ invs }}</td>
+        <td>{{ obj.itemname }}</td>
+        <td>{{ obj.itemquantity }}</td>
+        <td>{{ obj.itembasicrate }}</td>
+        <td>{{ obj.itemunittotal }}</td>
+
+    </tr>
+         {% endfor %}
+
+    </table>
+    <br>
+    <br>
+    <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+        <tr><td></td><td></td><td></td><td>No of items</td><td>{{ q.quan }}</td>
+         <td></td><td></td><td></td>><td>Grand Total</td><td>{{ g.grand }}</td></tr>
+    </table>
+
+    </form>
+    </body>
+    <br>
+    <br>
+    <br>
+{% include "footer.html" %}
+</html>

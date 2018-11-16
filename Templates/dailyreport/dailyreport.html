@@ -1,0 +1,45 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+
+    </head>
+    <br>
+    <br>
+    <br>
+    <body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+                <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+                    <tr>
+                        <td>
+                           Enter the date :
+                        </td>
+                        <td>
+                            {{ form.reportdate }}
+                        </td>
+                    </tr>
+                    <tr>
+                         <td align="center">
+                        <input type="submit" name="summit" value="INSERT">
+                         </td>
+                    </tr>
+
+
+                    <tr>
+                        <td align="center"><a href="{% url 'viewreport:viewreport_forms' pk=obj.id %}">View report</a>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+
+
+      </form>
+    </body>
+    <br>
+    <br>
+    <br>
+
+</html>

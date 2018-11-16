@@ -1,0 +1,40 @@
+{% load static %}
+<html lang="en">
+<head>
+   {% include "viewfeedback/managerheader.html" %}
+</head>
+<br>
+<br>
+<br>
+<body>
+
+
+            {% for obj in data %}
+     <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+                  <tr> <td>Bill no</td><td>{{obj.orderfoodbillno }}</td></tr>
+
+
+                  <tr> <td>Date</td><td>{{obj.orderfooddate }}</td></tr>
+
+                  <tr><td>Quantity</td><td>{{ obj.orderfoodquantity }}</td></tr>
+                  <tr><td>Item name</td><td>{{ obj.orderitemname }}</td></tr>
+
+                  <tr><td>Total amount</td><td>{{ obj.orderfoodtotalamount }}</td></tr>
+
+
+
+           </table>
+            <br>
+            <br>
+            <br>
+            {% endfor %}
+
+
+
+
+</body>
+<br>
+<br>
+<br>
+{% include "footer.html" %}
+</html>

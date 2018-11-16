@@ -1,0 +1,204 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% load static %}
+
+<html lang="en">
+    <head>
+{% include "employeeregistration/managerheader.html" %}
+    </head>
+    <body>
+<form method="post">
+    {% csrf_token %}
+    <h1 align="center">Employee Registration</h1>
+                <table align="center">
+                    <tr>
+                        <td>
+                           Name :
+                        </td>
+                         <td>
+                           {{ form.employeename }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           House :
+                        </td>
+                          <td>
+                           {{ form.employeehouse }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                          Place :
+                        </td>
+                          <td>
+                           {{ form.employeeplace }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           City :
+                        </td>
+                          <td>
+                           {{ form.employeecity }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           District :
+                        </td>
+                          <td>
+                           {{ form.employeedistrict }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           State :
+                        </td>
+                          <td>
+                           {{ form.employeestate }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Pin :
+                        </td>
+                          <td>
+                           {{ form.employeepin }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Date of Birth :
+                        </td>
+                         <td>
+                           {{ form.employeedob }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Age :
+                        </td>
+                         <td>
+                           {{ form.employeeage }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Contact :
+                        </td>
+                          <td>
+                           {{ form.employeecontact }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Email :
+                        </td>
+                          <td>
+                           {{ form.employeeemail }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Date of Join :
+                        </td>
+                         <td>
+                           {{ form.employeedoj }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Designation :
+                        </td>
+                         <td>
+                           {{ form.stafftype_id }}
+                           </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                           User name :
+                        </td>
+                          <td>
+                           {{ form.employeeusername }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Password :
+                        </td>
+                          <td>
+                           {{ form.employeepassword }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           <input type="submit" name="summit" value="REGISTER">
+                        </td>
+                        <td>
+                            <input type="submit" name="reset" value="RESET">
+                        </td>
+                    </tr>
+
+                </table>
+      </form>
+    <table border="=1" align="center">
+    <tr>
+        <td>Employee id</td>
+        <td>Name</td>
+        <td>House</td>
+        <td>Place</td>
+        <td>City</td>
+        <td>District</td>
+        <td>State</td>
+        <td>Pin</td>
+        <td>Date of Birth</td>
+        <td>Age</td>
+        <td>Contact</td>
+        <td>Email</td>
+        <td>Date of Join</td>
+        <td>Designation</td>
+        <td>Username</td>
+        <td>Password</td>
+        <td>Edit/Delete</td>
+    </tr>
+    {% for obj in data %}
+    <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.employeename }}</td>
+        <td>{{ obj.employeehouse }}</td>
+        <td>{{ obj.employeeplace }}</td>
+        <td>{{ obj.employeecity }}</td>
+        <td>{{ obj.employeedistrict }}</td>
+        <td>{{ obj.employeestate }}</td>
+        <td>{{ obj.employeespin }}</td>
+        <td>{{ obj.employeedob }}</td>
+        <td>{{ obj.employeeage }}</td>
+        <td>{{ obj.employeecontact }}</td>
+        <td>{{ obj.employeeemail }}</td>
+        <td>{{ obj.employeedoj }}</td>
+        <td>{{ obj.stafftype_id }}</td>
+        <td>{{ obj.employeeusername }}</td>
+        <td>{{ obj.employeepassword }}</td>
+        <td><a href="{% url 'employee:edit_emp' pk=obj.id %}">edit</a>
+        <a href="{% url 'employee:delete_emp' pk=obj.id %}">delete</a></td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+    </body>
+    <br>
+<br>
+<br>
+{% include "footer.html" %}
+</html>

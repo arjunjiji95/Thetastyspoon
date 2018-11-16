@@ -1,0 +1,109 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+
+    </head>
+    <body>
+<form method="post">
+    {% csrf_token %}
+    <h1 align="center">User Registration</h1>
+                <table align="center">
+                    <tr>
+                        <td>
+                           Name :
+                        </td>
+                        <td>
+                            {{ form.username }}
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           House :
+                        </td>
+                         <td>
+                             {{ form.userhouse }}
+                         </td>
+                    </tr>
+                     <tr>
+                        <td>
+                          Place :
+                        </td>
+                          <td>
+                             {{ form.userplace }}
+                         </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           City :
+                        </td>
+                          <td>
+                             {{ form.usercity }}
+                         </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           District :
+                        </td>
+                          <td>
+                             {{ form.userdistrict }}
+                         </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           State :
+                        </td>
+                          <td>
+                             {{ form.userstate }}
+                         </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Pin :
+                        </td>
+                          <td>
+                             {{ form.userpin }}
+                         </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Contact :
+                        </td>
+                          <td>
+                             {{ form.usercontact }}
+                         </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Email :
+                        </td>
+                          <td>
+                             {{ form.useremail }}
+                         </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           User name :
+                        </td>
+                          <td>
+                             {{ form.userusername }}
+                         </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Password :
+                        </td>
+                          <td>
+                             {{ form.userpassword }}
+                         </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" name="summit" value="REGISTER" align="center">
+                        </td>
+                    </tr>
+
+                </table>
+      </form>
+    </body>
+</html>

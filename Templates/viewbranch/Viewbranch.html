@@ -1,0 +1,61 @@
+{% load static %}
+<html lang="en">
+<head>
+{% include "viewbranch/user.html" %}
+</head>
+<br>
+<br>
+<br>
+<body>
+
+{% for obj in data %}
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+    <tr><td align="center">{{ obj.branchname }}</td></tr>
+    <tr><td align="center">{{ obj.branchplace }}</td></tr>
+    <tr>   <td align="center">{{ obj.branchcity }}</td></tr>
+    <tr>   <td align="center">{{ obj.branchdistrict }}</td></tr>
+    <tr>   <td align="center">{{ obj.branchdistrict }}</td></tr>
+    <tr>  <td align="center">{{ obj.branchcontact }}</td></tr>
+    <tr>  <td align="center">{{ obj.branchemail }}</td></tr>
+
+
+
+
+    {% endfor %}
+
+</table>
+<br>
+<br>
+<h1 align="center">Table Details</h1>
+<br>
+<br>
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+    <tr>
+        <td>Table id</td>
+        <td>Table no</td>
+        <td>Seat No</td>
+        <td>Rate</td>
+        <td>Book Now</td>
+
+    </tr>
+    {% for obj1 in data1 %}
+    <tr>
+      <td>{{ obj1.id }}</td>
+        <td>{{ obj1.tableno }}</td>
+        <td>{{ obj1.seatno }}</td>
+        <td>{{ obj1.tablerate }}</td>
+        <td><a href="{% url 'tablebook:tablebook_forms' pk=obj1.id %}">Book Now</a></td>
+
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+
+<br>
+<br>
+{% include "footer.html" %}
+
+</html>

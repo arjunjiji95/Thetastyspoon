@@ -1,0 +1,96 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+{% include "orderfood/user.html" %}
+    </head>
+    <br>
+    <br>
+    <body>
+<form method="post">
+     {% csrf_token %}
+     <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+                     <tr>
+                        <td>
+                           Booking Date :
+                        </td>
+                           <td>
+                           {{ form.orderfooddate }}
+                          </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Bill no :
+                        </td>
+                        <td>
+                           {{ form.orderfoodbillno }}
+                          </td>
+                    </tr>
+     </table>
+    <br>
+
+     {% for obj in data %}
+              <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+                  <tr> <td align="center"> <img src="{{ obj.menupic.url }}"width="120" height="120"></td></tr>
+
+
+
+                  <tr> <td align="center">{{ obj.menuname }}</td></tr>
+                   <tr>  <td align="center">&#x20b9;{{ obj.menuprice }}</td></tr>
+                  <tr>  <td align="center">{{ obj.menudescription }}</td></tr>
+
+                  <br>
+                  <br>
+                  {% endfor %}
+              </table>
+    <br>
+    <br>
+    <br>
+     <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+                    <tr>
+                        <td>
+                           Enter the quantity :
+                        </td>
+                         <td>
+                           {{ form.orderfoodquantity }}
+                          </td>
+                    </tr>
+                    <tr>
+                         <td>
+                        <input type="submit" name="summit" value="SUBMIT">
+                         </td>
+                    </tr>
+     </table>
+    <br>
+    <br>
+
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+        <tr>
+            <td>Order id</td>
+        <td>Item Name</td>
+        <td>Quantity</td>
+        <td>Total Amount</td>
+    </tr>
+    {% for obj in data1 %}
+    <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.orderitemname }}</td>
+        <td>{{ obj.orderfoodquantity }}</td>
+        <td>{{ obj.orderfoodtotalamount }}</td>
+    </tr>
+
+
+
+    {% endfor %}
+
+</table>
+
+
+</form>
+    </body>
+<br>
+<br>
+{% include "footer.html" %}
+</html>

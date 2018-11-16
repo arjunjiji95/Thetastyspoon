@@ -1,0 +1,20 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include "Homepage/userheader.html" %}
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+
+
+
+</form>
+</body>
+
+{% include "footer.html" %}
+</html>

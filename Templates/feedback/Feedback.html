@@ -1,0 +1,81 @@
+{% load static %}
+
+<html lang="en">
+<head>
+{% include "feedback/user.html" %}
+</head>
+<body>
+<br>
+<br>
+<form method="post">{% csrf_token %}
+
+
+    <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+        <tr>
+            <td>
+                Feedback Content :
+            </td>
+            <td>
+                {{ form.feedbackcontent }}
+            </td>
+
+        </tr>
+         <tr>
+            <td>
+                Date :
+            </td>
+            <td>
+                {{ form.feedbackdate }}
+            </td>
+
+        </tr>
+         <tr>
+            <td>
+                Branch Name :
+            </td>
+            <td>
+                {{ form.branch_id }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="summit" value="INSERT">
+            </td>
+            <td>
+                <input type="submit" name="summit" value="RESET">
+            </td>
+        </tr>
+
+    </table>
+</form>
+<br>
+<br>
+<br>
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+    <tr>
+        <td>Feedback id</td>
+        <td>Feedback content</td>
+        <td>Date</td>
+        <td>Branch id</td>
+        <td>Edit/Delete</td>
+    </tr>
+    {% for obj in data %}
+    <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.feedbackcontent }}</td>
+        <td>{{ obj.feedbackdate }}</td>
+        <td>{{ obj.branch_id }}</td>
+
+        <td><a href="{% url 'feedback:edit_feedback' pk=obj.id %}">edit</a>
+        <a href="{% url 'feedback:delete_feedback' pk=obj.id %}">delete</a></td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+</body>
+<br>
+<br>
+{% include "footer.html" %}
+</html>

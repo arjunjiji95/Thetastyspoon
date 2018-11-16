@@ -1,0 +1,92 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+{% include "menu/admin.html" %}
+    </head>
+    <br>
+    <br>
+    <br>
+    <body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+                <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+                    <tr>
+                        <td>
+                           Menu Category :
+                        </td>
+                        <td>
+                            {{ form.foodtype_id }}
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                          Menu Name :
+                        </td>
+                         <td>
+                            {{ form.menuname }}
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Price :
+                        </td>
+                     <td>
+                            {{ form.menuprice }}
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Description :
+                        </td>
+                     <td>
+                            {{ form.menudescription }}
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Image :
+                        </td>
+                     <td>
+                            {{ form.menupic }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <input type="submit" name="summit" value="INSERT">
+                        </td>
+                        <td>
+                         <input type="reset" name="summit" value="RESET">
+                         </td>
+                    </tr>
+
+                </table>
+    <br>
+    <br><br>
+    {% for obj in data %}
+
+
+    <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+        <tr><td>Menu id </td> <td>{{ obj.id }}</td></tr>
+        <tr>   <td>Category </td><td>{{ obj.foodtype_id }}</td></tr>
+        <tr>  <td>Name </td> <td>{{ obj.menuname }}</td></tr>
+        <tr>  <td>Price </td><td>{{ obj.menuprice }}</td></tr>
+        <tr>  <td>Description </td><td>{{ obj.menudescription }}</td></tr>
+        <tr>   <td>Image </td><td>{{ obj.menupic }}</td></tr>
+     <tr>   <td>Edit/Delete </td> <td><a href="{% url 'menu:edit_menu' pk=obj.id %}">edit</a>
+            <a href="{% url 'menu:delete_menu' pk=obj.id %}">delete</a></td></tr>
+
+
+        <br>
+        <br>
+
+    {% endfor %}
+
+</table>
+      </form>
+    </body>
+    <br>
+    <br>
+    <br>
+{% include "footer.html" %}
+</html>

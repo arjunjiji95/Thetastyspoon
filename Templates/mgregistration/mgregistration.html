@@ -1,0 +1,162 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+{% include "mgregistration/admin.html" %}
+    </head>
+    <br>
+    <br>
+    <br>
+    <body>
+<form method="post">
+    {% csrf_token %}
+
+                <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+                    <tr>
+                        <td>
+                           Name :
+                        </td>
+                         <td>
+                           {{ form.branchmanagername }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           House :
+                        </td>
+                          <td>
+                           {{ form.branchmanagerhouse }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                          Place :
+                        </td>
+                          <td>
+                           {{ form.branchmanagerplace }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           City :
+                        </td>
+                          <td>
+                           {{ form.branchmanagercity }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           District :
+                        </td>
+                          <td>
+                           {{ form.branchmanagerdistrict }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           State :
+                        </td>
+                          <td>
+                           {{ form.branchmanagerstate }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Pin :
+                        </td>
+                          <td>
+                           {{ form.branchmanagerpin }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Date of Birth :
+                        </td>
+                         <td>
+                           {{ form.branchmanagerdob }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Age :
+                        </td>
+                         <td>
+                           {{ form.branchmanagerage }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Contact :
+                        </td>
+                          <td>
+                           {{ form.branchmanagercontact }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Email :
+                        </td>
+                          <td>
+                           {{ form.branchmanageremail }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Date of Join :
+                        </td>
+                         <td>
+                           {{ form.branchmanagerdoj }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Username :
+                        </td>
+                         <td>
+                           {{ form.branchmanagerusername }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Password :
+                        </td>
+                         <td>
+                           {{ form.branchmanagerpassword }}
+                           </td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Status :
+                        </td>
+                         <td>
+                           {{ form.branchmanagerstatus }}
+                           </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                           Branch Name :
+                        </td>
+                         <td>
+                           {{ form.branch_id }}
+                           </td>
+                    </tr>
+
+
+                     <tr>
+                        <td>
+                           <input type="submit" name="summit" value="REGISTER">
+                        </td>
+                        <td>
+                            <input type="submit" name="reset" value="RESET">
+                        </td>
+                    </tr>
+
+                </table>
+      </form>
+    </body>
+<br>
+<br>
+<br>
+{% include "footer.html" %}
+</html>
