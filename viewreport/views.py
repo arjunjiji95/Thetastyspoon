@@ -1,16 +1,20 @@
 from django.shortcuts import render, redirect
-from dailyreport.models import Dailyreport
-from orderfood.models import Orderfood
+
+from dreport.models import Dreport
+from branch.models import Branch
+from branchmanager.models import Branchmanager
+
 
 
 
 def viewreport(request, pk):
-    #login_id = request.session['logid']
-    reportdate = request.session['reportdate']
-    #model_object = Viewreport.objects.filter(id=pk)
-    model_object = Dailyreport.objects.filter(id=pk)
-    model_object1 = Orderfood.objects.filter(orderfooddate=reportdate)
-    #model_object1 = Menu.objects.filter(menu_id=pk)
+    login_id = request.session['logid']
+    request.session['branch_id'] = pk
 
+    model_object1 = Branch.objects.filter(id=pk)
+    model_object3 = Branchmanager.objects.get(branch_id=pk)
+    model_object2 = Dreport.objects.filter(branchmanager_id=model_object3.id)
+    # cursor = connection.cursor()
+    # cursor.execute("update tabledetails_tabledetails set status='Booked' where id='%s'" % (pk,))
 
-    return render(request, "viewreport/viewreport.html", {'data': model_object, 'data1':model_object1})
+    return render(request, "viewreport/viewreport.html", {'data': model_object1, 'data1': model_object2})

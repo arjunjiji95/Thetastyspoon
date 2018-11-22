@@ -75,6 +75,15 @@ INSTALLED_APPS = [
     'adbranch',
     'adfeed',
     'aboutus',
+    'repbranch',
+    'carttable',
+    'pay',
+    'dreport',
+    'cashon',
+    'nett',
+    'creditt',
+    'casht',
+    'cashtab',
     #'changepwd',
 
 

@@ -7,6 +7,12 @@
     <br>
     <br>
     <body>
+    <script>
+    function check1()
+    {
+    alert("The item is inserted to cart.Go to My cart for payment.")
+    }
+</script>
 <form method="post">
      {% csrf_token %}
      <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
@@ -58,7 +64,7 @@
                     </tr>
                     <tr>
                          <td>
-                        <input type="submit" name="summit" value="SUBMIT">
+                        <input type="submit" name="summit" value="SUBMIT" onclick="check1()">
                          </td>
                     </tr>
      </table>

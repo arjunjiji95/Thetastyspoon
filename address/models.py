@@ -1,7 +1,7 @@
 from django.db import models
 
 class Address(models.Model):
-    billno = models.BigIntegerField()
+    billno = models.CharField(max_length=20, default='')
     total = models.BigIntegerField()
     address = models.CharField(max_length=200, default='')
     phone=models.BigIntegerField()

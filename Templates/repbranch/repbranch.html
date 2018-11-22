@@ -1,0 +1,31 @@
+{% load static %}
+<html lang="en">
+<head>
+{% include "adbranch/admin.html" %}
+</head>
+<br>
+<br>
+<br>
+<body>
+
+{% for obj in data %}
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+    <tr><td>Branch Name</td> <td>{{ obj.branchname }}</td></tr>
+    <tr>    <td>Place</td><td>{{ obj.branchplace }}</td></tr>
+    <tr>   <td>District</td> <td>{{ obj.branchdistrict }}</td></tr>
+    <tr>  <td>Contact</td><td>{{ obj.branchcontact }}</td></tr>
+      <tr>  <td>Book Table</td><td><a href="{% url 'viewreport:viewreport_forms' pk=obj.id %}">View reports</a></td></tr>
+    <br>
+    <br>
+
+    {% endfor %}
+
+</table>
+
+
+</body>
+<br>
+<br>
+<br>
+{% include "footer.html" %}
+</html>

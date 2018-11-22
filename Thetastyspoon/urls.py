@@ -65,6 +65,16 @@ urlpatterns = [
     url(r'^adbranch/', include('adbranch.urls')),
     url(r'^adfeed/', include('adfeed.urls')),
     url(r'^aboutus/', include('aboutus.urls')),
+    url(r'^repbranch/', include('repbranch.urls')),
+    url(r'^carttable/', include('carttable.urls')),
+    url(r'^dreport/', include('dreport.urls')),
+    url(r'^cashon/', include('cashon.urls')),
+    url(r'^pay/', include('pay.urls')),
+    url(r'^nett/', include('nett.urls')),
+    url(r'^creditt/', include('creditt.urls')),
+    url(r'^casht/', include('casht.urls')),
+    url(r'^cashtab/', include('cashtab.urls')),
+
 
 
 

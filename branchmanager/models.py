@@ -17,7 +17,7 @@ class Branchmanager(models.Model):
     branchmanagerage = models.BigIntegerField(default='')
     branchmanagerdoj = models.DateField(default=date.today)
     branchmanagercontact = models.BigIntegerField(default='')
-    branchmanageremail = models.CharField(max_length=50, default='')
+    branchmanageremail = models.EmailField()
     branchmanagerusername = models.CharField(max_length=50, default='')
     branchmanagerpassword = models.CharField(max_length=50, default='')
     branchmanagerstatus = models.BigIntegerField(default='')

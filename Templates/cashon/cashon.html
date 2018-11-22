@@ -1,0 +1,62 @@
+{% load static %}
+<html>
+
+{% include "cashon/user.html" %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+ <table cellpadding="7" align="center" bgcolor="#FAFAFA" width="45%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+">
+
+            
+            <tr align="center">
+
+            </tr>
+            <tr align="center">
+                <td>
+                    Total Quantity:{{ q.quan }}
+                </td>
+            </tr>
+            <tr align="center">
+                <td>
+                    Total Price:Rs.{{ g.grand }}
+                </td>
+            </tr>
+              
+
+        </table >
+        <table align="center">
+            <tr>
+                <td>
+                    <br>
+                    <br>
+                You have to pay Rs. {{ g.grand }} . Your order will be delivered within half an hour
+                    <br>
+                    <br>
+                </td>
+            </tr>   
+        </table>
+               
+    </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% include "footer.html" %}
+</html>

@@ -36,7 +36,7 @@ class agency_forms(forms.ModelForm):
     agencycontact = forms.CharField(
         required=True,
         label='agencycontact',
-        max_length=6,
+        max_length=10,
         widget=forms.TextInput(attrs={'pattern': '[0-9 ]+', 'title': 'enter digits only'})
     )
     class Meta:

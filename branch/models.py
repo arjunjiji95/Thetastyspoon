@@ -9,7 +9,7 @@ class Branch(models.Model):
     branchdistrict = models.CharField(max_length=20, default='')
     branchpin = models.CharField(max_length=20, default='')
     branchcontact = models.CharField(max_length=10, default='')
-    branchemail = models.CharField(max_length=20, default='')
+    branchemail = models.EmailField()
 
     def __str__(self):
         return self.branchname

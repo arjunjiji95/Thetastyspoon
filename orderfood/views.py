@@ -31,6 +31,7 @@ def order(request, pk):
             orderfoodbillno = orderObj['orderfoodbillno']
             total = int(price) * int(quantity)
             request.session['orderfoodbillno'] = orderfoodbillno
+            #request.session['orderfooddate'] = orderfooddate
             #orderfooddate=request.session['orderfooddate']
 
 

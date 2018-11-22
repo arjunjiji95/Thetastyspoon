@@ -6,5 +6,5 @@ app_name = 'viewbranch'
 urlpatterns = [
     #url(r'^$', branchview, name='viewbranch_forms'),
     url(r'^(?P<pk>\d+)$', branchview, name='viewbranch_forms'),
-    #url(r'^branchview/(?P<pk>\d+)/$', branchview, name='branchview'),
+    #url(r'^verify_details/(?P<pk>\d+)/$', verify_details, name='verify_details'),
 ]

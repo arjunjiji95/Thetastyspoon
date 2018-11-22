@@ -18,7 +18,7 @@ class menu_forms(forms.ModelForm):
     menudescription = forms.CharField(
         required=True,
         label='menudescription',
-        max_length=30,
+        max_length=500,
         widget=forms.TextInput(attrs={'pattern': '[A-Za-z0-9 ]+', 'title': 'enter description'})
     )
 

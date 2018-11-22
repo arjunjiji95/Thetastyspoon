@@ -10,7 +10,7 @@ class User(models.Model):
     userstate = models.CharField(max_length=20, default='')
     userpin = models.BigIntegerField(default='')
     usercontact = models.BigIntegerField(default='')
-    useremail = models.CharField(max_length=20, default='')
+    useremail = models.EmailField()
     userusername = models.CharField(max_length=20, default='')
     userpassword = models.CharField(max_length=20, default='')
 

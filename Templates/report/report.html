@@ -1,0 +1,114 @@
+
+
+{% load static %}
+
+<html lang="en">
+    <head>
+{% include "report/managerheader.html" %}
+    </head>
+    <br>
+    <br>
+    <br>
+    <body>
+<form method="post">
+    {% csrf_token %}
+
+                <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+                    <tr>
+                        <td>
+                           Report date :
+                        </td>
+                           <td>
+                           {{ form.reportdate }}
+                           </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                           No of table bookings :
+                        </td>
+                          <td>
+                           {{ form.tablecount }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Grand Total :
+                        </td>
+                        <td>
+                           {{ form.tableamt }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           No of food orders :
+                        </td>
+                        <td>
+                           {{ form.foodcount }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Grand Total :
+                        </td>
+                        <td>
+                           {{ form.foodamt }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Purchase Quantity :
+                        </td>
+                        <td>
+                           {{ form.pcount }}
+                           </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Grand Total :
+                        </td>
+                        <td>
+                           {{ form.pamt }}
+                           </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                           <input type="submit" name="summit" value="INSERT" align="center">
+                        </td>
+
+                    </tr>
+
+
+                </table>
+       </form>
+<br>
+<br>
+<br>
+    {% for obj in data %}
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+        <tr><td>Report id</td><td>{{ obj.id }}</td></tr>
+        <tr><td>Date</td><td>{{ obj.reportdate }}</td></tr>
+        <tr><td>Table count</td><td>{{ obj.tablecount }}</td></tr>
+        <tr><td>Amount</td><td>{{ obj.tableamt }}</td></tr>
+        <tr> <td>Order count</td><td>{{ obj.foodcount }}</td></tr>
+        <tr><td>Amount</td><td>{{ obj.foodamt }}</td></tr>
+        <tr> <td>Purchase count</td><td>{{ obj.pcount }}</td></tr>
+        <tr> <td>Amount</td><td>{{ obj.pamt }}</td></tr>
+
+
+    <br>
+    <br>
+
+    {% endfor %}
+
+</table>
+
+
+    </body>
+    <br>
+<br>
+<br>
+{% include "footer.html" %}
+</html>

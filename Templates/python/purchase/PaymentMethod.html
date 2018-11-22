@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
+{% include "cashon/user.html" %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -67,9 +77,9 @@ function check()
 
                     <h3 align="center"><font color="#03A9F4">  <b><a href="{% url 'card:card' %}" >Credit/Debit/ATM Card</a></b></font></h3>
                     <h3 align="center"><font color="#03A9F4">  <b><a href="{% url 'net:net' %}" >Net Banking</a></b></font></h3>
-                    <h3 align="center"><font color="#03A9F4">  <b><a href="{% url 'cash:cash' %}" >Cash On Delivery</a></b></font></h3>
-                    <input type="submit" name="submit" size="20" style="background-color:#81D4FA;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" value="PAY &#8377; {{ g.grand }}">
-                     <h3 align="center"><font color="#03A9F4">  <b><a href="{% url 'payment:card' %}" >Pay &#8377; {{ g.grand }}</a></b></font></h3>
+                    <h3 align="center"><font color="#03A9F4">  <b><a href="{% url 'cashon:cashon' %}" >Cash On Delivery</a></b></font></h3>
+
+
                 </td>
                 <td>
                     {{ a }}
@@ -78,3 +88,14 @@ function check()
         </table>
     </form>
     </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% include "footer.html" %}
+</html>

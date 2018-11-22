@@ -2,12 +2,16 @@
 
 <html lang="en">
     <head>
-
+{% include "Login/managerheader.html" %}
     </head>
     <body>
+     <br>
+    <br>
+    <br>
+    <br>
 <form method="post">
     {% csrf_token %}
-    <h1 align="center">User Registration</h1>
+
                 <table align="center">
                     <tr>
                         <td>
@@ -16,7 +20,9 @@
                         <td>
                             {{ form.username }}
                         </td>
-                    </tr>
+
+                   </tr>
+
                      <tr>
                         <td>
                            House :
@@ -102,8 +108,14 @@
                             <input type="submit" name="summit" value="REGISTER" align="center">
                         </td>
                     </tr>
+                    <tr><td align="center"> <a href="{% url 'login:login_forms' %}">Login</a></td></tr>
 
                 </table>
       </form>
     </body>
+    <br>
+    <br>
+    <br>
+    <br>
+{% include "footer.html" %}
 </html>

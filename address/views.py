@@ -32,7 +32,7 @@ def address(request):
     #         address = addressObj['address']
     #         phone = addressObj['phone']
     #
-    #         a = Address(address=address, phone=phone, orderfoodbillno=d, total=grandtotal)
+    #         a = Address(address=address, phone=phone, billno=d, total=grandtotal.grand,user_id=login_id)
     #         a.save()
     #
     #         return redirect('address:address_forms')

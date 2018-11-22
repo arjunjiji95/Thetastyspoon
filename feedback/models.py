@@ -6,7 +6,7 @@ from branch.models import Branch
 
 
 class Feedback(models.Model):
-    feedbackcontent = models.CharField(max_length=20, default='')
+    feedbackcontent = models.CharField(max_length=200, default='')
     feedbackdate = models.DateField(default=date.today)
     user_id = models.BigIntegerField()
     branch_id = models.ForeignKey(Branch, on_delete=models.CASCADE)

@@ -37,6 +37,7 @@
         <td>Rate</td>
         <td>Book Now</td>
 
+
     </tr>
     {% for obj1 in data1 %}
     <tr>
@@ -44,13 +45,20 @@
         <td>{{ obj1.tableno }}</td>
         <td>{{ obj1.seatno }}</td>
         <td>{{ obj1.tablerate }}</td>
-        <td><a href="{% url 'tablebook:tablebook_forms' pk=obj1.id %}">Book Now</a></td>
+
+        <td><a href="{% url 'tablebook:tablebook_forms' pk=obj1.id %}">Book now</a></td>
 
 
     </tr>
     {% endfor %}
 
 </table>
+<br>
+<br>
+<div align="center">
+     <img src="{% static 'img/table.png' %}" align="center">
+</div>
+
 
 </body>
 

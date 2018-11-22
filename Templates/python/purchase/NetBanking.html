@@ -2,6 +2,16 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
+{% include "cashon/user.html" %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -27,9 +37,9 @@
                </tr>
                <tr>
                 <td colspan="2">
-                    <input type="radio" name="bank" value="HDFC"><img src="../purchase/img/HDFC_Bank.jpg" width="15" height="15"> HDFC Bank
-                    <input type="radio" name="bank" value="ICIC"><img src="../purchase/img/ICIC_bank.png" width="90" height="20"> 
-                    <input type="radio" name="bank" value="SBI"><img src="../purchase/img/SBI-logo.svg.png" width="15" height="15"> State Bank Of India
+                    <input type="radio" name="bank" value="HDFC"><img src="{% static 'img/HDFC_Bank.jpg' %}" width="15" height="15"> HDFC Bank
+                    <input type="radio" name="bank" value="ICIC"><img src="{% static 'img/ICIC_bank.png' %}" width="90" height="20">
+                    <input type="radio" name="bank" value="SBI"><img src="{% static 'img/SBI-logo.svg.png' %}" width="15" height="15"> State Bank Of India
                     
                 </td>
             </tr>
@@ -66,10 +76,21 @@
                 
             
             <td colspan="2" align="center">
-                <input type="button" name="submit" size="20" style="background-color:#81D4FA;height:40px; width:150px;border-radius: 12px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" value="PAY &#8377;" onclick="redirect()">
+
+                <h3 align="center"><font color="#03A9F4">  <b><a href="{% url 'cash:cash' %}" >Pay</a></b></font></h3>
                 </td>
             </tr>
         </table>
               </form>
     </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% include "footer.html" %}
 </html>

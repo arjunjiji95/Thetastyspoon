@@ -1,7 +1,7 @@
 {% load static %}
 <html lang="en">
 <head>
-{% include "mycart/user.html" %}
+{% include "viewreport/admin.html" %}
 </head>
 <br>
 <br>
@@ -11,27 +11,30 @@
     {% csrf_token %}
 
 
-     <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" border="1">
+      {% for obj in data1 %}
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+        <tr><td>Report id</td><td>{{ obj.id }}</td></tr>
+        <tr><td>Date</td><td>{{ obj.reportdate }}</td></tr>
+    <tr><td align="center">Table Bookings</td></tr>
+        <tr><td>Table count</td><td>{{ obj.tablecount }}</td></tr>
+        <tr><td>Amount</td><td>{{ obj.tableamt }}</td></tr>
+    <tr><td align="center">Food Bookings</td></tr>
+        <tr> <td>Order count</td><td>{{ obj.foodcount }}</td></tr>
+        <tr><td>Amount</td><td>{{ obj.foodamt }}</td></tr>
+    <tr><td align="center">Purchase Details</td></tr>
+        <tr> <td>Purchase count</td><td>{{ obj.pcount }}</td></tr>
+        <tr> <td>Amount</td><td>{{ obj.pamt }}</td></tr>
 
 
-                  <tr>
-                      <td>Order id</td>
+    <br>
+    <br>
 
-                  <td>Item name</td>
+    {% endfor %}
+
+</table>
 
 
-
-                  </tr>
-         {% for obj in data1 %}
-         <tr>
-             <td>{{obj.id }}</td>
-             <td>{{ obj.orderfoodbillno }}</td>
-
-         </tr>
-
- {% endfor %}
-
-     </table>
 </form>
 
 

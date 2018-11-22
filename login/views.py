@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from . import forms
 from user.models import User
 from branchmanager.models import Branchmanager
+from django.contrib.auth import authenticate
 
 
 def userhome(request):
@@ -15,8 +16,10 @@ def login(request):
             userObj = form.cleaned_data
             username = userObj['username']
             password = userObj['password']
+            user = authenticate(request, username=username, password=password)
             if User.objects.filter(userusername=username).exists() and User.objects.filter(userpassword=password).exists():
                 obj = User.objects.get(userusername=username)
+
 
                 request.session['logid'] = obj.id
                 return redirect('login:userhome')
@@ -25,6 +28,12 @@ def login(request):
 
                 request.session['logid'] = obj.id
                 return redirect('managerlogin:managerhome')
+
+            elif user is not None:
+
+                request.session['logid'] = user.id
+                request.session['logname'] = user.username
+                return redirect('adminlogin:adminhome')
 
 
             else:
